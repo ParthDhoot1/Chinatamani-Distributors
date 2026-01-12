@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Company Packed Foods - Chintamani Distributors</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #fff; color: #333; }
+    header { background: #fff; border-bottom: 2px solid #d4af37; padding: 10px 15px; }
+    .header-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+    .logo { font-weight: bold; font-size: 1.2rem; color: #b8860b; }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+    nav ul li a { text-decoration: none; color: #333; font-size: 0.95rem; padding: 5px 8px; border-radius: 5px; transition: background 0.3s; }
+    nav ul li a:hover, nav ul li a.active { background: #d4af37; color: white; }
+    .hero { background-size: cover; background-position: center; padding: 60px 20px; text-align: center; color: white; position: relative; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+    .hero-text { position: relative; z-index: 2; }
+    .hero-text h1 { font-size: 1.8rem; margin-bottom: 10px; }
+    .hero-text p { font-size: 1rem; }
+    .container { width: 100%; max-width: 1100px; margin: auto; padding: 20px; }
+    
+    /* Updated Product Section Styles */
+    .product-section {
+      display: flex;
+      flex-direction: column;
+      background: #fffdf8;
+      border-radius: 10px;
+      box-shadow: 2px 2px 0 #d4af37;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .product-section:hover { box-shadow: 4px 4px 0 #b8860b; }
+    .product-image { 
+      text-align: center; 
+      margin-bottom: 15px; 
+      order: 1; /* Ensure image is first on mobile */
+    }
+    .product-image img { 
+      width: 200px; 
+      height: 200px; 
+      object-fit: contain; 
+      display: inline-block; 
+      transition: opacity 0.3s ease;
+    }
+    
+    .paperboat-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      display: inline-block;
+      transition: opacity 0.3s ease;
+    }
+    
+    .mapro-image img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      display: inline-block;
+      transition: opacity 0.3s ease;
+    }
+
+    .weikfield-image img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      display: inline-block;
+      transition: opacity 0.3s ease;
+    }
+
+    .mtr-image img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      display: inline-block;
+      transition: opacity 0.3s ease;
+    }
+    .product-info { 
+      padding: 15px; 
+      text-align: center; 
+      order: 2; /* Ensure text comes after image on mobile */
+    }
+    .product-info h3 { color: #b8860b; margin-bottom: 8px; font-size: 1.4rem; font-weight: bold; }
+    .product-info p { margin-bottom: 15px; font-size: 0.95rem; }
+    .product-info ul { padding-left: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .product-info ul li { margin-bottom: 0; }
+    .product-info ul li a { 
+      text-decoration: none; 
+      color: #333; 
+      font-size: 0.9rem; 
+      padding: 5px 10px; 
+      background: #f5f5f5; 
+      border-radius: 15px; 
+      transition: all 0.3s; 
+      display: inline-block;
+    }
+    .product-info ul li a:hover { 
+      background: #d4af37; 
+      color: white; 
+      transform: translateY(-2px);
+    }
+    @media (min-width: 768px) { 
+      .product-section { 
+        flex-direction: row; 
+        align-items: flex-start;
+      } 
+      .product-image { 
+        flex: 0 0 220px; 
+        margin-bottom: 0;
+        margin-right: 20px;
+        order: 0; /* Reset order for desktop */
+      } 
+      .product-info { 
+        flex: 1; 
+        text-align: left;
+        order: 0; /* Reset order for desktop */
+      } 
+      .product-info ul { 
+        justify-content: flex-start; 
+      }
+      .hero-text h1 { font-size: 2.5rem; } 
+      .hero-text p { font-size: 1.2rem; } 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Chintamani Distributors</a>
+      <nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="agro.html">Agro Commodities</a></li>
+          <li><a href="packed.html" class="active">Company Packed Foods</a></li>
+          <li><a href="frozen.html">Frozen Foods</a></li>
+          <li><a href="metals.html">Metals & Scraps</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="background-image:url('https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&q=80&w=1600&fit=crop');">
+    <div class="hero-text">
+      <h1>Company Packed Foods</h1>
+      <p>Convenient and quality-packed foods for all your needs.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="product-section">
+      <div class="product-image paperboat-image"><img src="images/paperboat/paperboat.png" id="snackImage"></div>
+      <div class="product-info">
+        <h3>Paper Boat</h3>
+        <p>Authentic Indian beverages and snacks that bring back childhood memories.</p>
+        <ul>
+          <li><a onclick="changeImage('snackImage','images/paperboat/aampapd.png')">Aam Panna</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/Coconut_Water.png')">Coconut Water</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/vitd-aphonso-mango.jpg')">Alphonso Mango</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/vitd-apple.png')">Apple</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/vitd-fixed-fruit.png')">Fixed Fruit</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/vitd-lychee.png')">Lychee</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/vitd-orange.png')">Orange</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/nata-lychee.png')">Nata Lychee</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/nata-orange.png')">Nata Orange</a></li>
+          <li><a onclick="changeImage('snackImage','images/paperboat/crushed-chiki.png')">Crushed Chiki</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="product-section">
+      <div class="product-image mapro-image"><img src="images/mapro/maprologo.png" id="maproImage"></div>
+      <div class="product-info">
+        <h3>Mapro</h3>
+        <p>Premium fruit-based products, squashes, crushes, and confectionery from the hills of Mahabaleshwar.</p>
+        <ul>
+          <li><a onclick="changeImage('maproImage','images/mapro/mango-squash.png')">Mango Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/strawberry-fruit-crush-mapro.webp')">Strawberry Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/alphonsomango-squash.png')">Alphonso Mango Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/blueberry-fruit-crush-mapro.webp')">Blueberry Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/chocolate-almond-dates.webp')">Chocolate Almond Dates</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/rose.png')">Rose Sharbat</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/green-apple-fruit-crush-mapro.webp')">Green Apple Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/kala-khatta-squash-mapro.webp')">Kala Khatta Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/litchi-fruit-crush-mapro.webp')">Litchi Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/pineapple-fruit-crush-mapro.webp')">Pineapple Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/pink-guava-fruit-crush-mapro.webp')">Pink Guava Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/mixed-fruit-crush-mapro.webp')">Mixed Fruit Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/orange-fruit-crush-mapro.webp')">Orange Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/kiwi-fruit-crush-mapro.webp')">Kiwi Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/kokum-fruit-crush-mapro.webp')">Kokum Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/raw-mango-fruit-crush-mapro.webp')">Raw Mango Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/jeera-masala-cordial-mapro.webp')">Jeera Masala Cordial</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/khus-sharbat-mapro.webp')">Khus Sharbat</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/watermelon-sharbat-mapro.webp')">Watermelon Sharbat</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/triple-sec-sharbat-mapro.webp')">Triple Sec Sharbat</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/variyali-sharbat-mapro.webp')">Variyali Sharbat</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/green-apple-sharbat-mapro.webp')">Green Apple Sharbat</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/lemon-ginger-squash-mapro.webp')">Lemon Ginger Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/lemon-barley-water-mapro.webp')">Lemon Barley Water</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/limboo-timboo-lemon-squash-mapro.webp')">Limboo Timboo Lemon</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/chocolate-paan-mapro.webp')">Chocolate Paan</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/whole-cashews-coated-with-fine-dark-chocolate-mapro.webp')">Chocolate Coated Cashews</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/amlaginger-squash.png')">Amla Ginger Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/blackcurrant-squash.png')">Blackcurrant Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/bluecuracao-squash.png')">Blue Curacao Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/butterscotch-flavoured-apple-crush-mapro.png')">Butterscotch Apple Crush</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/citrusblue.png')">Citrus Blue Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/falchoos.png')">Falooda</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/fruba.png')">Fruit Beer</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/gingerale.png')">Ginger Ale</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/jamun.png')">Jamun Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/mahakool.png')">Mahakol</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/mojito.png')">Mojito</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/orange-squash.png')">Orange Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/rawmangomapro.png')">Raw Mango Squash</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/strawberry-syrup.png')">Strawberry Syrup</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/strawberrymapro.PNG')">Strawberry Product</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/DaNmSZqa.jpeg')">Mapro Special 1</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/LNUUyyH6.jpeg')">Mapro Special 2</a></li>
+          <li><a onclick="changeImage('maproImage','images/mapro/NAwFFtxC.jpeg')">Mapro Special 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-image weikfield-image"><img src="images/weikfield/0IEdoylL.jpeg" id="weikfieldImage"></div>
+      <div class="product-info">
+        <h3>Weikfield</h3>
+        <p>Premium food products including jams, sauces, and ready-to-eat meals.</p>
+        <ul>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/0IEdoylL.jpeg')">Pasta Elbow</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/1zakVH23.jpeg')">Pasta Spaghetti</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/2Nx2uggy.jpeg')">Mango Custard-</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/2tQJNFyH.jpeg')">White Pasta sause</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/5en73F28.jpeg')">Vanilla Cooker Cake</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/5P97XaHv.jpeg')">Caramel Pudding</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/7nQvRBUo.jpeg')">Green Chiili Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/8kZhleNK.jpeg')">Instant Tomato Salsa Pasta</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/9IL4R5KR.jpeg')">Tomato Ketchup</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/75NwSSnZ.jpeg')">Lemon Tea</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/AvfTHRRj.jpeg')">Peprico Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/BikfC5t4.jpeg')">Drinking Chocolate</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/BtQzZaCk.jpeg')">Mango Jelly</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/bwjBKDTg.jpeg')">Soya Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/CbXHy5Qc.jpeg')">Vanilla Whipping Cream</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/Ci0Xjm5B.jpeg')">Pahadi Kahwa</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/cZnnCKwS.jpeg')">Chocolate Cooker Cake</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/e5D6YQUM.jpeg')">Instant Mac & Cheese</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/EdLwtf0y.jpeg')">Strawberry Jelly</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/EPE5BaWb.jpeg')">Penne Pasta</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/eQjzq15H.jpeg')">Mustard Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/EQnqm9QV.jpeg')">butterscotch Icecream</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/EXeAH4PN.jpeg')">Mustard Seasoning</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/fcMhXEHo.jpeg')">Fusilli Pasta</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/FRguZrCk.jpeg')">Cheesy Pasta</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/fvtMN9oD.jpeg')">Sweet Chilli Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/g7AKbqxj.jpeg')">Garlic Chilli Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/G8DnGH1J.jpeg')">Vanilla Custard</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/gHcyX6xv.jpeg')">Butterscotch Custard</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/H3vFWNwA.jpeg')">Classic Green Tea</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/H5BJJbzw.jpeg')">Divya Kawach Tea</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/hpa2La4P.jpeg')">instant Masala Pasta</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/hUOhuOU0.jpeg')">Chilli Vineger</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/I2qppZSy.jpeg')">Rasberry Jelly</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/jGnX7E4l.jpeg')">Cornflour</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/jHZrmfmQ.jpeg')">Kesar Pista Custard</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/jsyjYzbY.jpeg')">Baking Soda</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/LkCy4VdR.jpeg')">Red Chilli Sauce</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/LZEQNjXw.jpeg')">Mango Falooda</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/ms7cDyQl.jpeg')">Ginger Mulethi Lemon Tea</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/MuCBOAnh.jpeg')">Strawberry Custard</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/NH7DJsgs.jpeg')">Divine Tulsi Tea</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/nsCXImHR.jpeg')">Pineapple Jelly</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/NTbB1DpX.jpeg')">Instant Mushroom Pasta</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/pLXScARX.jpeg')">Kesar Pista Falooda</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/pvj4eXyg.jpeg')">Rose Falooda</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/rohxYiBV.jpeg')">Orange Jelly</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/RsZJcaPH.jpeg')">Strawberry Icecream</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/s2mGdror.jpeg')">Cocoa Powder</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/U070qktp.jpeg')">Dandelion Mint Tea</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/VGECSZ1U.jpeg')">Strawberry Falloda</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/VlYq0ty0.jpeg')">Vanilla Oven Cake</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/x2LCD9W2.jpeg')">Baking Powder</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/YNzplK5m.jpeg')">Chocolate Icecream</a></li>
+          <li><a onclick="changeImage('weikfieldImage','images/weikfield/Z9I9NiGY.jpeg')">Icing Sugar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-image mtr-image"><img src="images/mtr/5O8R11jv.jpeg" id="mtrImage"></div>
+      <div class="product-info">
+        <h3>MTR</h3>
+        <p>Ready-to-eat Indian meals, breakfast mixes, and instant food products for quick and delicious meals.</p>
+        <ul>
+          <li><a onclick="changeImage('mtrImage','images/mtr/5O8R11jv.jpeg')">Rajma Masala</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/6s1r74l7.jpeg')">Vangi Bhath</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/7BJIgv6k.jpeg')">Palak Paneer</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/7DAFzR0h.jpeg')">Gulab Jamun</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/8aIfZDRU.jpeg')">Rasam Powder</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/aGLb8W57.jpeg')">Puliogare Powder</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/AR7m5zJQ.jpeg')">Vada</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/aypmN6mx.jpeg')">Multigrain Dosa</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/B5KzMKc1.jpeg')">Seviyan Vermicelli</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/C6kxQSnS.jpeg')">Masala Upma</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/c9sAb2PQ.jpeg')">Khaman Dhokla</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/CO0brUHx.jpeg')">Badam Drink Mix</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/D4jdN1zZ.jpeg')">Chocolate Drink</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/DAeIOv3G.jpeg')">Rasam Powder</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/de8CiXJR.jpeg')">Bhindi Masala</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/EdMEPqrS.jpeg')">Rava Idli</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/EV5eW8W7.jpeg')">Paneer Tikka Masala</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/ExDp6cJM.jpeg')">Rasogolla</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/FBgm386z.jpeg')">Pavbhaji</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/FTxrYgJz.jpeg')">Bisibele Bath</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/I9RJxOIy.jpeg')">3M Vegetable Upma</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/iWP6lsJX.jpeg')">Rice Idli</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/IxFOuyAM.jpeg')">Shahi Paneer</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/j04btj0Z.jpeg')">Masala Rice</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/J8OGvRoZ.jpeg')">Mixed Vegetable Curry</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/jEB2qnPc.jpeg')">Badam Drink</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/jEGfM59N.jpeg')">3M Poha</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/JlLusBHc.jpeg')">Dal Fry</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/KMQA0l9G.jpeg')">Mutter Paneer</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/kMSUlrZO.jpeg')">Pongal</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/l0PamakK.jpeg')">Elbow Macroni</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/lALqSx1U.jpeg')">Dosa</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/Me1iAl6s.jpeg')">Paneer Makhani</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/mF9JdD1v.jpeg')">Dhokla</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/mkkk7ARB.jpeg')">Dal Makhani</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/NhLkBAWP.jpeg')">Roasted Vermicelli</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/OAq1OCCS.jpeg')">Vegetable Pulao</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/OPbJvTbK.jpeg')">Tomato Rice</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/pp2xKNX4.jpeg')">Upma</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/qiMTGOtc.jpeg')">Sambar Powder</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/RLGomSiP.jpeg')">Rava Dosa</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/SCi8hdfz.jpeg')">Vermicelli Payasam</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/tNc3zGu7.jpeg')">Chutney Powder</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/VJ7pvyCG.jpeg')">Aloo Mutter</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/WXpnGLub.jpeg')">Pulao Masala</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/xo7e0nFL.jpeg')">Pulliogare</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/xp2Wi0FA.jpeg')">Channa Masala</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/Ygll7QIs.jpeg')">jeera Rice</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/yJsnvlgv.jpeg')">Uttappam Mix</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/zp1GdWTe.jpeg')">Rasam Rice</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/ZWGFrs9Q.jpeg')">Paneer Butter Masala</a></li>
+          <li><a onclick="changeImage('mtrImage','images/mtr/zwZkgdYy.jpeg')">Sambar Rice</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-image nutrela-image"><img src="images/nutrela/8M5vHX9a.jpeg" id="nutrelaImage"></div>
+      <div class="product-info">
+        <h3>Nutrela</h3>
+        <p>High-quality soya products for healthy and nutritious meals.</p>
+        <ul>
+          <li><a onclick="changeImage('nutrelaImage','images/nutrela/8M5vHX9a.jpeg')">Nutrela Soya Chunks</a></li>
+          <li><a onclick="changeImage('nutrelaImage','images/nutrela/CZH8K9eL.jpeg')">Nutrela Soya Mini Chunks</a></li>
+          <li><a onclick="changeImage('nutrelaImage','images/nutrela/zAs6wCyU.jpeg')">Nutrela Granules</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-image top-ramen-image"><img src="images/top ramen/1UjCvues.jpeg" id="topRamenImage"></div>
+      <div class="product-info">
+        <h3>Top Ramen</h3>
+        <p>Delicious instant noodles for quick and tasty meals.</p>
+        <ul>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/1UjCvues.jpeg')">Top Ramen Masala Cup noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/7jnynRUc.jpeg')">Top Ramen Rogan Josh Cup Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/D4JTwTOW.jpeg')">Top Ramen Seafood Cup Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/ebhsnjJB.jpeg')">Top Ramen Masala Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/eOVFAa0V.jpeg')">Ocean Energy Drink</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/fMxn6plZ.jpeg')">Top Ramen Paneer Cup Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/LU9H4G15 (1).jpeg')">Top Ramen Fiery Chilly</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/I1vfsX0a.jpeg')">Veggie Manchow Cup Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/nHZCvoD9.jpeg')">Top Ramen Italiano Cup Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/OUEpPKcJ.jpeg')">Top Ramen Atta </a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/puczndpL.jpeg')">Heinz Ketchup</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/uhTKbOnD.jpeg')">Top Ramen Tomato Cup Noodles</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/wB5XjIka.jpeg')">Top Ramen Curry</a></li>
+          <li><a onclick="changeImage('topRamenImage','images/top ramen/WVXRac40.jpeg')">Top Ramen Chicken Cup Noodles</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+   <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Chintamani Distributors</h3>
+          <p>15 Years of Excellence in Importing, Exporting & Distribution</p>
+          <p>Trusted by 500+ businesses across India</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="agro.html">Agro Commodities</a></li>
+            <li><a href="packed.html">Company Packed Foods</a></li>
+            <li><a href="frozen.html">Frozen Foods</a></li>
+            <li><a href="metals.html">Metals & Scraps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p><strong>Address:</strong></p>
+          <p>78/1, Shop No 7, Dangat Estate</p>
+          <p>NDA Road, Shivane</p>
+          <p>Pune - 411023</p>
+          <p><strong>Phone:</strong> <a href="tel:7972371956">7972371956</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@chintamanidistributors.com">info@chintamanidistributors.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/7972371956">Click to Chat</a></p>
+          <p><strong>Business Hours:</strong> Mon-Sat: 9 AM - 6 PM</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Business Info</h3>
+          <p><strong>GST:</strong> 27AABCU9603R1ZN</p>
+          <p><strong>CIN:</strong> U51909MH2020PTC123456</p>
+          <p><strong>Import-Export Code:</strong> IEC1234567890</p>
+          <p><strong>Follow Us:</strong></p>
+          <div class="social-links">
+            <a href="https://facebook.com/chintamanidistributors" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com/company/chintamani-distributors" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Chintamani Distributors | All Rights Reserved | 15 Years of Excellence</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    footer {
+      background: linear-gradient(135deg, #fff8e1, #f5f0e8);
+      color: #333;
+      padding: 50px 0 20px;
+      margin-top: 80px;
+      border-top: 3px solid #d4af37;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      color: #b8860b;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .footer-section p {
+      margin-bottom: 10px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #b8860b;
+    }
+
+    .footer-section a {
+      color: #b8860b;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      font-size: 1.5rem;
+      color: #b8860b;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #d4af37;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #d4af37;
+      padding-top: 20px;
+      text-align: center;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      navMenu.classList.toggle('mobile');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-menu li a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        navMenu.classList.remove('mobile');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        navMenu.classList.remove('mobile');
+      }
+    });
+
+    function changeImage(imageId, newSrc) {
+      const img = document.getElementById(imageId);
+      img.style.opacity = 0;
+      setTimeout(() => { img.src = newSrc; img.style.opacity = 1; }, 200);
+    }
+  </script>
+</body>
+</html>
